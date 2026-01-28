@@ -1,0 +1,74 @@
+---
+const problems = [
+  {
+    title: 'Website Lapuk & Tak Profesional',
+    description: 'First impression penting! Website lama buat pelanggan ragu-ragu.',
+  },
+  {
+    title: 'Iklan Mahal, Conversion Rendah',
+    description: 'Duit habis dekat ads tapi tak convert jadi sales.',
+  },
+  {
+    title: 'Staf Penat Jawab Soalan Sama',
+    description: 'Masa terbuang jawab repeat questions setiap hari.',
+  },
+  {
+    title: 'Website Tak Mesra Mobile',
+    description: '70% traffic dari phone, tapi website slow & susah navigate.',
+  },
+];
+---
+
+<section id="masalah" class="section-padding">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Content Side -->
+      <div>
+        <!-- Section Label -->
+        <span class="inline-block text-sm font-semibold text-destructive mb-4 tracking-wider uppercase">
+          Masalah Biasa
+        </span>
+        
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          Adakah Ini{' '}
+          <span class="text-destructive">Cabaran</span>{' '}
+          Bisnes Anda?
+        </h2>
+        
+        <p class="text-lg text-muted-foreground mb-8">
+          Ramai SME Malaysia hadapi masalah yang sama. Jangan risau, kami ada penyelesaiannya.
+        </p>
+        
+        <!-- Problems List -->
+        <div class="space-y-4">
+          {problems.map((problem, index) => (
+            <div 
+              class="flex gap-4 p-4 rounded-xl bg-destructive/5 border border-destructive/10 hover:border-destructive/30 hover:scale-105 transition-all duration-300 animate-slide-in-left"
+              style={`animation-delay: ${index * 150}ms`}
+            >
+              <span class="text-3xl flex-shrink-0">{problem.icon}</span>
+              <div>
+                <h3 class="font-semibold text-foreground mb-1">{problem.title}</h3>
+                <p class="text-sm text-muted-foreground">{problem.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <!-- CTA -->
+        <div class="mt-8">
+          <a 
+            href="#solusi" 
+            class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+          >
+            Lihat Penyelesaian Kami
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

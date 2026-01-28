@@ -1,0 +1,111 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { 
+  title, 
+  description = "Transformasi digital untuk SME Malaysia. Website custom, landing page berkesan, dan integrasi AI untuk tingkatkan jualan & kredibiliti bisnes anda.",
+  canonical = "https://webdevmy.com/"
+} = Astro.props;
+
+// Only load Google Analytics in production
+const isProduction = import.meta.env.PROD;
+---
+
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234169e1' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/><path d='M2 12h20'/></svg>" />
+    
+    <meta name="description" content={description} />
+    <meta name="author" content="WebDevMY - Web Development Services Malaysia" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Malay" />
+    <meta name="geo.region" content="MY" />
+    <meta name="geo.country" content="Malaysia" />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://webdevmy.com/images/og-image.jpg" />
+    <meta property="og:locale" content="ms_MY" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://webdevmy.com/images/twitter-card.jpg" />
+
+    <title>{title}</title>
+    
+    <!-- Google Analytics - Production Only -->
+    {isProduction && (
+      <>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSFC00V8XF"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NSFC00V8XF', {
+            anonymize_ip: true,
+            allow_ad_personalization_signals: false
+          });
+        </script>
+      </>
+    )}
+  </head>
+  <body class="antialiased">
+    <a href="#main-content" class="skip-link">Langkau ke kandungan utama</a>
+    <slot />
+    
+    <!-- Scroll Animation Observer -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Hero section should animate immediately
+        const heroSection = document.querySelector('section:first-of-type');
+        
+        const observerOptions = {
+          threshold: 0.15,
+          rootMargin: '0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const items = entry.target.querySelectorAll('[class*="animate-"]');
+              items.forEach(item => {
+                item.style.animationPlayState = 'running';
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        // Observe all sections except hero
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section, index) => {
+          if (index === 0 && heroSection === section) {
+            // Hero animates immediately
+            const heroItems = section.querySelectorAll('[class*="animate-"]');
+            heroItems.forEach(item => {
+              item.style.animationPlayState = 'running';
+            });
+          } else {
+            // Other sections wait for scroll
+            observer.observe(section);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

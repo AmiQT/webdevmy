@@ -1,0 +1,112 @@
+---
+const benefits = [
+  { title: 'Peningkatan Kredibiliti', desc: 'Tampil lebih profesional, bina keyakinan pelanggan serta-merta' },
+  { title: 'Lebih Banyak Jualan & Leads', desc: 'Landing page yang dioptimalkan tukar pelawat jadi pembeli' },
+  { title: 'Operasi Lebih Efisien', desc: 'AI automasikan tugas berulang, jimat masa & kos operasi' },
+  { title: 'Pengalaman Pelanggan Cemerlang', desc: 'Website mesra-pengguna, mudah diakses di mana-mana peranti' },
+  { title: 'Kekal Relevan & Bersaing', desc: 'Teknologi terkini memastikan bisnes anda tak ketinggalan' },
+];
+
+const stats = [
+  { value: '50+', label: 'Projek Berjaya' },
+  { value: '95%', label: 'Kepuasan Pelanggan' },
+  { value: '30%', label: 'Peningkatan Jualan' },
+  { value: '24/7', label: 'Support' },
+];
+
+const reasons = [
+  'Fokus kepada PKS (SME) di Malaysia',
+  'Pendekatan tersuai, bukan one-size-fits-all',
+  'Kepakaran integrasi AI yang relevan',
+  'Harga kompetitif, kualiti premium',
+  'Proses telus, komunikasi responsif',
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">
+        Kenapa Pilih Kami
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        Bukan Sekadar Website,{' '}
+        <span class="text-secondary">Ini Pelaburan Strategik!</span>
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Kami bukan sekadar buat website - kami bantu bisnes anda berkembang.
+      </p>
+    </div>
+    
+    <!-- Stats Row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      {stats.map((stat, index) => (
+        <div 
+          class="text-center p-6 bg-primary/5 border border-primary/10 rounded-2xl hover:scale-110 transition-transform duration-300 animate-bounce-in"
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
+          <p class="text-muted-foreground text-sm">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Benefits & Reasons Grid -->
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Benefits -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+        <h3 class="text-2xl font-bold mb-8">Manfaat Yang Anda Dapat</h3>
+        <div class="space-y-6">
+          {benefits.map((benefit, index) => (
+            <div 
+              class="flex gap-4 hover:translate-x-2 transition-transform duration-300 animate-slide-in-left"
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <div class="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">{benefit.title}</h4>
+                <p class="text-muted-foreground text-sm">{benefit.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Why Choose Us -->
+      <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold mb-8">Kenapa Kami?</h3>
+        <ul class="space-y-4">
+          {reasons.map((reason, index) => (
+            <li 
+              class="flex items-center gap-3 animate-fade-in-up"
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <svg class="w-6 h-6 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-muted-foreground">{reason}</span>
+            </li>
+          ))}
+        </ul>
+        
+        <div class="mt-8 pt-6 border-t border-primary/10">
+          <p class="text-muted-foreground mb-4">Sedia untuk transform bisnes anda?</p>
+          <a 
+            href="#hubungi" 
+            class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors"
+          >
+            Mulakan Sekarang
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
