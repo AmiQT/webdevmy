@@ -1,6 +1,6 @@
 # WebDevMY
 
-Landing page for web development services targeting Malaysian SMEs.
+Landing page for AI solutions and custom software services targeting Malaysian businesses.
 
 ## Tech Stack
 
@@ -31,19 +31,29 @@ npm run dev
 src/
   components/    # Astro page sections
   data/          # Content (services, testimonials, portfolio, FAQs)
-  layouts/       # Base layout
+  layouts/       # Base layout with SEO meta tags
   pages/         # Routes
-  styles/        # Global CSS and variables
+  styles/        # Global CSS, dark theme variables
   types/         # TypeScript interfaces
 public/
   images/        # Static assets
+    projects/    # Portfolio project screenshots (add .webp files here)
 ```
 
 ## Customization
 
 Edit files in `src/data/` to update content without touching components.
 
-Site-wide config (name, phone, email, URL) is in `src/data/site.ts`.
+| File | What it controls |
+|------|-----------------|
+| `src/data/site.ts` | Site name, phone, URL |
+| `src/data/portfolio.ts` | Portfolio projects |
+| `src/data/testimonials.ts` | Client testimonials |
+| `src/data/faqs.ts` | FAQ section |
+
+## Adding Portfolio Screenshots
+
+Portfolio cards will show a gradient placeholder until you add images. Add `.webp` files to `public/images/projects/` matching the `image` field in `src/data/portfolio.ts`.
 
 ## Deployment
 
