@@ -1,24 +1,5 @@
 ---
-const testimonials = [
-  {
-    quote: 'Website baru ni memang game-changer! Sales saya naik 30% dalam masa sebulan. Pelanggan sekarang lebih percaya dengan bisnes saya.',
-    name: 'Pn. Siti',
-    role: 'Owner Butik Online',
-    rating: 5,
-  },
-  {
-    quote: 'Sistem AI chatbot tu jimatkan banyak masa team saya. Pelanggan dapat jawapan cepat, kita fokus pada kerja lain. Highly recommended!',
-    name: 'En. Azim',
-    role: 'Pengurus Agensi',
-    rating: 5,
-  },
-  {
-    quote: 'Landing page yang mereka buat untuk kempen saya memang power! Conversion rate naik gila-gila. ROI dalam 2 minggu je!',
-    name: 'En. Rahman',
-    role: 'Restoran Owner',
-    rating: 5,
-  },
-];
+import { testimonials } from '../data/testimonials';
 ---
 
 <section id="testimoni" class="section-padding bg-muted/30">
@@ -38,10 +19,10 @@ const testimonials = [
     </div>
     
     <!-- Testimonials Grid -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {testimonials.map((testimonial, index) => (
-        <div 
-          class="bg-card rounded-2xl p-8 shadow-sm border hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-in-right"
+        <div
+          class="bg-card rounded-2xl p-8 shadow-sm border hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-slide-in-right flex flex-col"
           style={`animation-delay: ${index * 150}ms`}
         >
           <!-- Quote Icon -->
@@ -50,7 +31,7 @@ const testimonials = [
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
           </div>
-          
+
           <!-- Rating -->
           <div class="flex gap-1 mb-4">
             {Array.from({ length: testimonial.rating }).map(() => (
@@ -59,18 +40,23 @@ const testimonials = [
               </svg>
             ))}
           </div>
-          
+
           <!-- Quote -->
-          <p class="text-foreground mb-6 leading-relaxed">"{testimonial.quote}"</p>
-          
+          <p class="text-foreground mb-6 leading-relaxed flex-1">"{testimonial.quote}"</p>
+
           <!-- Author -->
           <div class="flex items-center gap-4 pt-6 border-t">
-            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
               <span class="text-primary font-bold text-lg">{testimonial.name.charAt(0)}</span>
             </div>
-            <div>
-              <strong class="block text-foreground">{testimonial.name}</strong>
-              <span class="text-muted-foreground text-sm">{testimonial.role}</span>
+            <div class="min-w-0">
+              <strong class="block text-foreground truncate">{testimonial.name}</strong>
+              <span class="text-muted-foreground text-sm block">{testimonial.role}</span>
+              <div class="flex items-center gap-1 mt-1 flex-wrap">
+                <span class="text-xs font-semibold text-primary truncate">{testimonial.company}</span>
+                <span class="text-xs text-muted-foreground">·</span>
+                <span class="text-xs text-muted-foreground">{testimonial.location}</span>
+              </div>
             </div>
           </div>
         </div>

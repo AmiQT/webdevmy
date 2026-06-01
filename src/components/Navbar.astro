@@ -45,6 +45,7 @@ const navLinks = [
       id="mobile-menu-btn"
       class="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
       aria-label="Toggle menu"
+      aria-expanded="false"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -53,12 +54,12 @@ const navLinks = [
   </nav>
   
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t bg-background">
+  <div id="mobile-menu" class="hidden md:hidden border-t bg-background animate-fade-in-up">
     <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
       {navLinks.map(link => (
         <a 
           href={link.href} 
-          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 border-b border-transparent hover:border-primary/20"
         >
           {link.label}
         </a>
@@ -67,7 +68,7 @@ const navLinks = [
         href="https://wa.me/60138799702" 
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+        class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all active:scale-95 shadow-md"
       >
         WhatsApp Sekarang
       </a>
@@ -80,13 +81,15 @@ const navLinks = [
   const mobileMenu = document.getElementById('mobile-menu');
   
   menuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+    const isHidden = mobileMenu?.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isHidden));
   });
   
   // Close menu when clicking a link
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
+      menuBtn?.setAttribute('aria-expanded', 'false');
     });
   });
 </script>

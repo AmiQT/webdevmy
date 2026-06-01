@@ -7,36 +7,48 @@ const services = [
     description: 'Dari konsep hingga pelancaran, website yang unik ikut identiti jenama anda. Bukan template biasa-biasa, tapi custom design yang mencerminkan bisnes anda.',
     features: ['Design Unik', 'Mobile Responsive', 'SEO Optimized'],
     iconType: 'custom' as const,
+    badge: 'Terlaris',
+    badgeClass: 'bg-amber-100 text-amber-700 group-hover:bg-amber-500 group-hover:text-white',
   },
   {
     title: 'Landing Page',
     description: 'Direka khas untuk kempen marketing, tingkatkan lead & jualan. Conversion rate yang tinggi dengan design yang persuasif dan user-friendly.',
     features: ['High Converting', 'Fast Loading', 'A/B Testing Ready'],
     iconType: 'landing' as const,
+    badge: 'High ROI',
+    badgeClass: 'bg-green-100 text-green-700 group-hover:bg-green-500 group-hover:text-white',
   },
   {
     title: 'Corporate Website',
     description: 'Tingkatkan imej syarikat, bina kredibiliti & kepercayaan. Portal korporat yang profesional dengan semua features yang diperlukan.',
     features: ['Professional Look', 'Multi-page', 'CMS Integration'],
     iconType: 'corporate' as const,
+    badge: 'Premium',
+    badgeClass: 'bg-purple-100 text-purple-700 group-hover:bg-purple-500 group-hover:text-white',
   },
   {
     title: 'WordPress CMS',
     description: 'WordPress dashboard yang mudah digunakan! Edit content, add blog posts, manage products - semua boleh buat sendiri tanpa technical knowledge.',
     features: ['Easy to Manage', 'Plugin Support', 'Blog Ready'],
     iconType: 'wordpress' as const,
+    badge: 'Mudah Guna',
+    badgeClass: 'bg-blue-100 text-blue-700 group-hover:bg-blue-500 group-hover:text-white',
   },
   {
     title: 'E-commerce',
     description: 'Kedai online yang lengkap dengan payment gateway, inventory management, dan dashboard admin untuk urus bisnes anda.',
     features: ['Payment Gateway', 'Inventory System', 'Order Management'],
     iconType: 'ecommerce' as const,
+    badge: 'Lengkap',
+    badgeClass: 'bg-orange-100 text-orange-700 group-hover:bg-orange-500 group-hover:text-white',
   },
   {
     title: 'AI Integration',
     description: 'Chatbot, Analytics, Personalization - Automasi respons pelanggan, fahami data, berikan pengalaman personal yang luar biasa.',
     features: ['Chatbot', 'Smart Analytics', 'Automation'],
     iconType: 'ai' as const,
+    badge: 'Terbaru 🔥',
+    badgeClass: 'bg-red-100 text-red-700 group-hover:bg-red-500 group-hover:text-white',
   },
 ];
 ---
@@ -44,35 +56,35 @@ const services = [
 <section id="solusi" class="section-padding bg-muted/50">
   <div class="container mx-auto px-4">
     <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
       <span class="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
         Solusi Kami
       </span>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
         Pilih Pakej Yang Sesuai Untuk{' '}
         <span class="gradient-text">Bisnes Anda</span>
       </h2>
-      <p class="text-lg text-muted-foreground">
+      <p class="text-lg text-muted-foreground px-4">
         Setiap bisnes unik. Kami tawarkan solusi yang fleksibel untuk memenuhi keperluan anda.
       </p>
     </div>
     
     <!-- Services Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       {services.map((service, index) => (
         <div 
-          class={`group relative bg-card rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-bounce-in`}
+          class={`group relative bg-card rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-bounce-in hover:border-primary/50`}
           style={`animation-delay: ${index * 150}ms`}
         >
           <!-- Card Content -->
-          <div class="p-6">
+          <div class="p-5 sm:p-6 relative z-10">
             <!-- Badge -->
             <div class="flex items-start justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <ServiceIcon type={service.iconType} className="w-6 h-6 text-primary" client:load />
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:rotate-6 transition-all duration-300">
+                <ServiceIcon type={service.iconType} className="w-6 h-6 text-primary group-hover:text-white transition-colors" client:load />
               </div>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary animate-pulse">
-                Offer
+              <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 ${service.badgeClass}`}>
+                {service.badge}
               </span>
             </div>
             
