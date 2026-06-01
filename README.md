@@ -51,5 +51,4 @@ Configured for Netlify. Build command is `npm run build`, publish directory is `
 
 ## Contact
 
-WhatsApp: +60 13-879-9702  
-Email: hello@webdevmy.com
+GitHub: [AmiQT](https://github.com/AmiQT)
