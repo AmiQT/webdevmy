@@ -8,10 +8,8 @@ import Benefits from '../components/Benefits.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
-import Collab from '../components/Collab.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
-import ExitPopup from '../components/ExitPopup.astro';
 import '../styles/global.css';
 
 import { siteConfig } from '../data/site';
@@ -84,12 +82,10 @@ const businessStructuredData = {
     <Portfolio />
     <Testimonials />
     <FAQ />
-    <Collab />
     <Contact />
   </main>
   
   <Footer />
-  <ExitPopup />
   
   <!-- Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(businessStructuredData)} />
