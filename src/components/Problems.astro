@@ -27,13 +27,13 @@ const problems = [
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
       <div>
-        <span class="inline-block text-sm font-semibold text-destructive mb-4 tracking-wider uppercase">
+        <span class="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
           Masalah Biasa
         </span>
 
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
           Adakah Ini{' '}
-          <span class="text-destructive">Cabaran</span>{' '}
+          <span class="gradient-text">Cabaran</span>{' '}
           Bisnes Anda?
         </h2>
 
@@ -44,10 +44,9 @@ const problems = [
         <div class="space-y-4">
           {problems.map((problem, index) => (
             <div
-              class="flex gap-4 p-4 rounded-xl bg-destructive/5 border border-destructive/10 hover:border-destructive/30 hover:scale-105 transition-all duration-300 animate-slide-in-left"
-              style={`animation-delay: ${index * 150}ms`}
+              class="flex gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors duration-300"
             >
-              <div class="text-destructive flex-shrink-0" set:html={problem.icon} />
+              <div class="text-primary flex-shrink-0" set:html={problem.icon} />
               <div>
                 <h3 class="font-semibold text-foreground mb-1">{problem.title}</h3>
                 <p class="text-sm text-muted-foreground">{problem.description}</p>

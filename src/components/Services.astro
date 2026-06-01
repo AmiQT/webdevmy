@@ -73,12 +73,11 @@ const services = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       {services.map((service, index) => (
         <div
-          class="group relative bg-card rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-bounce-in hover:border-primary/50"
-          style={`animation-delay: ${index * 150}ms`}
+          class="group relative bg-card rounded-2xl border shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:border-primary/50"
         >
           <div class="p-5 sm:p-6 relative z-10">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:rotate-6 transition-all duration-300">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                 <ServiceIcon type={service.iconType} className="w-6 h-6 text-primary group-hover:text-white transition-colors" client:load />
               </div>
               <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 ${service.badgeClass}`}>

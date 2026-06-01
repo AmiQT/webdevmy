@@ -3,7 +3,6 @@ export interface SiteConfig {
   description: string;
   url: string;
   telephone: string;
-  email: string;
   address: {
     country: string;
     region: string;

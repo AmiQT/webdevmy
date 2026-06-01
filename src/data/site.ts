@@ -5,7 +5,6 @@ export const siteConfig: SiteConfig = {
   description: 'AI-powered digital solutions for Malaysian businesses. Custom web apps, AI integration, backend systems, and cloud infrastructure built for production.',
   url: 'https://webdevmy.com',
   telephone: '+60-13-879-9702',
-  email: 'hello@webdevmy.com',
   address: {
     country: 'MY',
     region: 'Malaysia',
