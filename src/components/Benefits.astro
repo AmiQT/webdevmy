@@ -1,25 +1,25 @@
 ---
 const benefits = [
-  { title: 'Peningkatan Kredibiliti', desc: 'Tampil lebih profesional, bina keyakinan pelanggan serta-merta' },
-  { title: 'Lebih Banyak Jualan & Leads', desc: 'Landing page yang dioptimalkan tukar pelawat jadi pembeli' },
-  { title: 'Operasi Lebih Efisien', desc: 'AI automasikan tugas berulang, jimat masa & kos operasi' },
-  { title: 'Pengalaman Pelanggan Cemerlang', desc: 'Website mesra-pengguna, mudah diakses di mana-mana peranti' },
-  { title: 'Kekal Relevan & Bersaing', desc: 'Teknologi terkini memastikan bisnes anda tak ketinggalan' },
+  { title: 'Architecture Yang Betul', desc: 'Setiap sistem dibina dengan foundation yang kukuh - scalable, maintainable, dan production-ready dari hari pertama.' },
+  { title: 'AI Yang Actually Work', desc: 'Bukan chatbot template. Agentic systems dengan tool calling, memory, dan RAG yang berfungsi dalam real-world scenarios.' },
+  { title: 'Full Observability', desc: 'Logs, metrics, dan traces yang betul. Anda tahu apa yang berlaku dalam sistem anda pada setiap masa.' },
+  { title: 'DevOps Best Practices', desc: 'CI/CD pipelines, containerization, dan IaC - pastikan deployment cepat, reliable, dan repeatable.' },
+  { title: 'Transparent & Communicative', desc: 'Progress update yang jelas, documentation yang lengkap, dan anda sentiasa tahu status projek anda.' },
 ];
 
 const stats = [
-  { value: '95%', label: 'Kepuasan Pelanggan' },
-  { value: '30%', label: 'Peningkatan Jualan' },
+  { value: '10+', label: 'Tech Stacks' },
+  { value: '3', label: 'Enterprise Clients' },
+  { value: '100%', label: 'Production-Ready' },
   { value: '24/7', label: 'Support' },
-  { value: '14 hari', label: 'Avg. Delivery' },
 ];
 
 const reasons = [
-  'Fokus kepada PKS (SME) di Malaysia',
-  'Pendekatan tersuai, bukan one-size-fits-all',
-  'Kepakaran integrasi AI yang relevan',
-  'Harga kompetitif, kualiti premium',
-  'Proses telus, komunikasi responsif',
+  'Pengalaman dengan enterprise & hackathon projects',
+  'AI-first approach - bukan add-on selepas dah build',
+  'Full-stack: frontend, backend, mobile, dan infra',
+  'Code quality: tested, documented, dan maintainable',
+  'Komunikasi responsif sepanjang projek',
 ];
 ---
 
@@ -31,18 +31,18 @@ const reasons = [
         Kenapa Pilih Kami
       </span>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-        Bukan Sekadar Website,{' '}
-        <span class="text-secondary">Ini Pelaburan Strategik!</span>
+        Bukan Sekadar Deliver.{' '}
+        <span class="text-secondary">Kami Bina Dengan Betul.</span>
       </h2>
       <p class="text-lg text-muted-foreground">
-        Kami bukan sekadar buat website - kami bantu bisnes anda berkembang.
+        Setiap keputusan teknikal ada sebab. Kami bina sistem yang anda boleh bangga dengan - dan yang boleh grow bersama bisnes anda.
       </p>
     </div>
-    
+
     <!-- Stats Row -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
       {stats.map((stat, index) => (
-        <div 
+        <div
           class="text-center p-6 bg-primary/5 border border-primary/10 rounded-2xl hover:scale-110 transition-transform duration-300 animate-bounce-in"
           style={`animation-delay: ${index * 100}ms`}
         >
@@ -51,15 +51,15 @@ const reasons = [
         </div>
       ))}
     </div>
-    
+
     <!-- Benefits & Reasons Grid -->
     <div class="grid lg:grid-cols-2 gap-8">
       <!-- Benefits -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-        <h3 class="text-2xl font-bold mb-8">Manfaat Yang Anda Dapat</h3>
+        <h3 class="text-2xl font-bold mb-8">Apa Yang Anda Dapat</h3>
         <div class="space-y-6">
           {benefits.map((benefit, index) => (
-            <div 
+            <div
               class="flex gap-4 hover:translate-x-2 transition-transform duration-300 animate-slide-in-left"
               style={`animation-delay: ${index * 100}ms`}
             >
@@ -76,13 +76,13 @@ const reasons = [
           ))}
         </div>
       </div>
-      
+
       <!-- Why Choose Us -->
       <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8">
         <h3 class="text-2xl font-bold mb-8">Kenapa Kami?</h3>
         <ul class="space-y-4">
           {reasons.map((reason, index) => (
-            <li 
+            <li
               class="flex items-center gap-3 animate-fade-in-up"
               style={`animation-delay: ${index * 100}ms`}
             >
@@ -93,11 +93,11 @@ const reasons = [
             </li>
           ))}
         </ul>
-        
+
         <div class="mt-8 pt-6 border-t border-primary/10">
-          <p class="text-muted-foreground mb-4">Sedia untuk transform bisnes anda?</p>
-          <a 
-            href="#hubungi" 
+          <p class="text-muted-foreground mb-4">Sedia untuk bincang projek?</p>
+          <a
+            href="#hubungi"
             class="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors"
           >
             Mulakan Sekarang

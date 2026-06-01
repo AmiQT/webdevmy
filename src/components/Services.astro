@@ -3,51 +3,51 @@ import ServiceIcon from './ServiceIcon';
 
 const services = [
   {
-    title: 'Custom Website',
-    description: 'Dari konsep hingga pelancaran, website yang unik ikut identiti jenama anda. Bukan template biasa-biasa, tapi custom design yang mencerminkan bisnes anda.',
-    features: ['Design Unik', 'Mobile Responsive', 'SEO Optimized'],
-    iconType: 'custom' as const,
+    title: 'AI Integration',
+    description: 'Bina sistem AI yang actually work dalam production. Agentic chatbots, RAG pipelines, function calling, dan automation workflow menggunakan Gemini, Azure OpenAI, dan LangGraph.',
+    features: ['Agentic Chatbot', 'RAG + pgvector', 'LangGraph Workflow'],
+    iconType: 'ai' as const,
     badge: 'Terlaris',
     badgeClass: 'bg-amber-100 text-amber-700 group-hover:bg-amber-500 group-hover:text-white',
   },
   {
-    title: 'Landing Page',
-    description: 'Direka khas untuk kempen marketing, tingkatkan lead & jualan. Conversion rate yang tinggi dengan design yang persuasif dan user-friendly.',
-    features: ['High Converting', 'Fast Loading', 'A/B Testing Ready'],
-    iconType: 'landing' as const,
-    badge: 'High ROI',
+    title: 'Custom Web App',
+    description: 'Full-stack web applications yang dibina untuk scale. Bukan template - custom architecture yang sesuai dengan keperluan bisnes anda, dari MVP hingga production.',
+    features: ['Next.js / Astro', 'FastAPI / Golang', 'Database Design'],
+    iconType: 'custom' as const,
+    badge: 'Popular',
     badgeClass: 'bg-green-100 text-green-700 group-hover:bg-green-500 group-hover:text-white',
   },
   {
-    title: 'Corporate Website',
-    description: 'Tingkatkan imej syarikat, bina kredibiliti & kepercayaan. Portal korporat yang profesional dengan semua features yang diperlukan.',
-    features: ['Professional Look', 'Multi-page', 'CMS Integration'],
-    iconType: 'corporate' as const,
-    badge: 'Premium',
-    badgeClass: 'bg-purple-100 text-purple-700 group-hover:bg-purple-500 group-hover:text-white',
-  },
-  {
-    title: 'WordPress CMS',
-    description: 'WordPress dashboard yang mudah digunakan! Edit content, add blog posts, manage products - semua boleh buat sendiri tanpa technical knowledge.',
-    features: ['Easy to Manage', 'Plugin Support', 'Blog Ready'],
-    iconType: 'wordpress' as const,
-    badge: 'Mudah Guna',
+    title: 'Mobile App',
+    description: 'Cross-platform mobile apps dengan Flutter. Satu codebase untuk iOS dan Android. Terintegrasi dengan backend dan AI systems.',
+    features: ['Flutter (iOS + Android)', 'Supabase / Firebase', 'Offline Support'],
+    iconType: 'landing' as const,
+    badge: 'Cross-Platform',
     badgeClass: 'bg-blue-100 text-blue-700 group-hover:bg-blue-500 group-hover:text-white',
   },
   {
-    title: 'E-commerce',
-    description: 'Kedai online yang lengkap dengan payment gateway, inventory management, dan dashboard admin untuk urus bisnes anda.',
-    features: ['Payment Gateway', 'Inventory System', 'Order Management'],
-    iconType: 'ecommerce' as const,
-    badge: 'Lengkap',
+    title: 'Backend & API',
+    description: 'Production-grade backend systems. REST APIs, microservices, database design, authentication, dan integrations dengan third-party services.',
+    features: ['FastAPI / Spring Boot', 'PostgreSQL / Redis', 'API Design'],
+    iconType: 'corporate' as const,
+    badge: 'Production-Ready',
+    badgeClass: 'bg-purple-100 text-purple-700 group-hover:bg-purple-500 group-hover:text-white',
+  },
+  {
+    title: 'DevOps & Infrastructure',
+    description: 'CI/CD pipelines, containerization, Kubernetes orchestration, dan Infrastructure as Code. Pastikan sistem anda reliable, scalable, dan observable.',
+    features: ['Docker + Kubernetes', 'Terraform IaC', 'Prometheus + Grafana'],
+    iconType: 'wordpress' as const,
+    badge: 'Cloud-Native',
     badgeClass: 'bg-orange-100 text-orange-700 group-hover:bg-orange-500 group-hover:text-white',
   },
   {
-    title: 'AI Integration',
-    description: 'Chatbot, Analytics, Personalization - Automasi respons pelanggan, fahami data, berikan pengalaman personal yang luar biasa.',
-    features: ['Chatbot', 'Smart Analytics', 'Automation'],
-    iconType: 'ai' as const,
-    badge: 'Terbaru 🔥',
+    title: 'Analytics Dashboard',
+    description: 'Tukar data mentah jadi insight yang boleh diambil tindakan. Custom dashboards, reporting, dan monitoring untuk bagi visibility penuh kepada bisnes anda.',
+    features: ['Custom Dashboard', 'Real-time Metrics', 'PDF Reports'],
+    iconType: 'ecommerce' as const,
+    badge: 'Data-Driven',
     badgeClass: 'bg-red-100 text-red-700 group-hover:bg-red-500 group-hover:text-white',
   },
 ];
@@ -58,27 +58,25 @@ const services = [
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
       <span class="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
-        Solusi Kami
+        Apa Yang Kami Bina
       </span>
       <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-        Pilih Pakej Yang Sesuai Untuk{' '}
-        <span class="gradient-text">Bisnes Anda</span>
+        Solutions Yang{' '}
+        <span class="gradient-text">Selesaikan Masalah Sebenar</span>
       </h2>
       <p class="text-lg text-muted-foreground px-4">
-        Setiap bisnes unik. Kami tawarkan solusi yang fleksibel untuk memenuhi keperluan anda.
+        Setiap projek dibina dengan architecture yang betul, bukan shortcut.
       </p>
     </div>
-    
+
     <!-- Services Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       {services.map((service, index) => (
-        <div 
-          class={`group relative bg-card rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-bounce-in hover:border-primary/50`}
+        <div
+          class="group relative bg-card rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden animate-bounce-in hover:border-primary/50"
           style={`animation-delay: ${index * 150}ms`}
         >
-          <!-- Card Content -->
           <div class="p-5 sm:p-6 relative z-10">
-            <!-- Badge -->
             <div class="flex items-start justify-between mb-4">
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:rotate-6 transition-all duration-300">
                 <ServiceIcon type={service.iconType} className="w-6 h-6 text-primary group-hover:text-white transition-colors" client:load />
@@ -87,18 +85,15 @@ const services = [
                 {service.badge}
               </span>
             </div>
-            
-            <!-- Title -->
+
             <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
               {service.title}
             </h3>
-            
-            <!-- Description -->
+
             <p class="text-muted-foreground mb-4 text-sm leading-relaxed">
               {service.description}
             </p>
-            
-            <!-- Features -->
+
             <ul class="space-y-2 mb-6">
               {service.features.map(feature => (
                 <li class="flex items-center gap-2 text-sm text-muted-foreground">
@@ -109,30 +104,28 @@ const services = [
                 </li>
               ))}
             </ul>
-            
-            <!-- CTA -->
-            <a 
-              href="#hubungi" 
+
+            <a
+              href="#hubungi"
               class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
             >
-              Dapatkan Sebut Harga
+              Bincang Projek
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
-          
-          <!-- Hover Gradient -->
+
           <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
         </div>
       ))}
     </div>
-    
+
     <!-- Bottom CTA -->
     <div class="text-center mt-12">
-      <p class="text-muted-foreground mb-4">Tak pasti pakej mana sesuai?</p>
-      <a 
-        href="https://wa.me/60138799702?text=Hi,%20saya%20nak%20tanya%20tentang%20pakej%20website" 
+      <p class="text-muted-foreground mb-4">Ada keperluan yang lain?</p>
+      <a
+        href="https://wa.me/60138799702?text=Hi,%20saya%20nak%20bincang%20tentang%20projek%20saya"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
@@ -140,7 +133,7 @@ const services = [
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        Tanya Kami di WhatsApp
+        WhatsApp Kami
       </a>
     </div>
   </div>

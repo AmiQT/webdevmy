@@ -2,7 +2,7 @@ import type { SiteConfig } from '../types/data';
 
 export const siteConfig: SiteConfig = {
   name: 'WebDevMY',
-  description: 'Web development services for Malaysian SMEs. Custom websites, landing pages, and AI integration to boost business credibility and sales.',
+  description: 'AI-powered digital solutions for Malaysian businesses. Custom web apps, AI integration, backend systems, and cloud infrastructure built for production.',
   url: 'https://webdevmy.com',
   telephone: '+60-13-879-9702',
   email: 'hello@webdevmy.com',

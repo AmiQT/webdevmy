@@ -2,31 +2,31 @@ import type { FAQ } from '../types/data';
 
 export const faqs: FAQ[] = [
   {
-    question: 'Berapa timeline biasa untuk siap?',
-    answer: 'Landing page siap dalam 10-14 hari. Corporate site dengan integrasi AI ambil 4-6 minggu. Kami susun sprint jelas supaya anda tahu progress setiap minggu.',
+    question: 'Apa jenis projek yang anda ambil?',
+    answer: 'Kami fokus pada custom software - web apps, mobile apps, AI integration, backend systems, dan DevOps infrastructure. Bukan template atau basic landing page. Setiap projek ada keperluan teknikal yang kami tackle dari architecture hingga deployment.',
+  },
+  {
+    question: 'Berapa lama biasanya untuk siap?',
+    answer: 'Bergantung pada scope. MVP web app atau AI chatbot boleh siap dalam 2-4 minggu. Sistem yang lebih complex dengan mobile app, backend, dan infrastructure boleh ambil 6-12 minggu. Kami bagi timeline yang jelas dengan milestones dari awal.',
   },
   {
     question: 'Macam mana proses kerja anda?',
-    answer: 'Kami mulakan dengan discovery call untuk fahami bisnes anda, kemudian proposal & sebut harga, design mockup, development, dan akhirnya launch dengan training.',
+    answer: 'Bermula dengan discovery call untuk faham keperluan bisnes dan teknikal anda. Kemudian kami propose architecture, bagi estimate, dan mula development dengan sprint dua minggu. Anda dapat progress update berkala dan boleh bagi feedback sepanjang proses.',
   },
   {
-    question: 'Bolehkah saya urus kandungan sendiri selepas go-live?',
-    answer: 'Ya! Kami setup CMS lengkap dengan training video. Anda boleh update teks, gambar, blog, testimoni tanpa tunggu developer.',
+    question: 'Boleh saya urus sistem sendiri selepas siap?',
+    answer: 'Ya. Kami setup dengan CMS atau admin dashboard ikut keperluan, dan provide documentation serta handover session. Untuk sistem yang lebih complex, kami boleh arrange ongoing maintenance retainer.',
   },
   {
-    question: 'Ada support lepas launch?',
-    answer: 'Kami sediakan 30 hari support percuma + opsyen retainer bulanan untuk maintenance, laporan SEO, dan kempen promosi.',
+    question: 'Tech stack apa yang anda guna?',
+    answer: 'Kami pilih stack berdasarkan keperluan projek - bukan satu stack untuk semua. Frontend: Next.js, Astro, Flutter. Backend: FastAPI, Golang, Spring Boot. AI: Gemini, Azure OpenAI, LangGraph. Infrastructure: Docker, Kubernetes, Terraform. Database: PostgreSQL, Supabase, Redis.',
   },
   {
-    question: 'Apa teknologi yang anda gunakan?',
-    answer: 'Kami gunakan stack moden seperti React, Next.js, Astro, Tailwind CSS, dan boleh integrate dengan WordPress, Shopify, atau custom solutions.',
+    question: 'Boleh anda integrate AI ke dalam sistem sedia ada?',
+    answer: 'Ya, ini salah satu perkara yang kami buat. Kami assess sistem sedia ada, design integration point, dan implement AI layer - sama ada chatbot, automation workflow, atau analytics - tanpa kena rebuild dari scratch.',
   },
   {
-    question: 'Bagaimana landing page homestay boleh tarik pelawat antarabangsa?',
-    answer: 'Gunakan storytelling budaya, visual immersive, dan CTA multilingual.',
-  },
-  {
-    question: 'Berapa anggaran kos projek?',
-    answer: 'Landing page bermula RM1,299, website SME RM2,999 dan projek AI atau automation dari RM4,999.',
+    question: 'Berapa kos untuk satu projek?',
+    answer: 'Kami tak ada fixed pricing sebab setiap projek berbeza scope dan complexity. Hubungi kami dengan brief projek anda dan kami akan bagi custom quote yang transparent - tanpa hidden cost.',
   },
 ];
