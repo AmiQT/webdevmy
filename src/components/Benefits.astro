@@ -1,25 +1,25 @@
 ---
 const benefits = [
-  { title: 'Architecture Yang Betul', desc: 'Setiap sistem dibina dengan foundation yang kukuh - scalable, maintainable, dan production-ready dari hari pertama.' },
-  { title: 'AI Yang Actually Work', desc: 'Bukan chatbot template. Agentic systems dengan tool calling, memory, dan RAG yang berfungsi dalam real-world scenarios.' },
-  { title: 'Full Observability', desc: 'Logs, metrics, dan traces yang betul. Anda tahu apa yang berlaku dalam sistem anda pada setiap masa.' },
-  { title: 'DevOps Best Practices', desc: 'CI/CD pipelines, containerization, dan IaC - pastikan deployment cepat, reliable, dan repeatable.' },
-  { title: 'Transparent & Communicative', desc: 'Progress update yang jelas, documentation yang lengkap, dan anda sentiasa tahu status projek anda.' },
+  { title: 'Seni Bina Gred Enterprise', desc: 'Setiap sistem dibina atas foundation kukuh — modular, scalable, clean architecture, dan production-ready dari Hari Pertama.' },
+  { title: 'Cloud Cost & Reliability Optimized', desc: 'Jimatkan kos server (AWS/GCP) sehingga 30%-50% dengan Kubernetes orchestration, caching layer Redis, dan Terraform IaC.' },
+  { title: 'Agentic AI Bertaraf Produksi', desc: 'Bukan sekadar bot generik. AI agents dengan tool-calling, document RAG, dan ChatOps yang beroperasi stabil dalam senario bisnes sebenar.' },
+  { title: 'Full Observability & 24/7 Alerting', desc: 'Dashboard Prometheus & Grafana dengan notifikasi Telegram serta-merta supaya anda sentiasa tahu status kesihatan sistem.' },
+  { title: 'Komunikasi Pantas & Terus', desc: 'Tiada birokrasi agensi yang perlahan — berhubung terus dengan jurutera melalui WhatsApp dengan sprint update dua minggu yang jelas.' },
 ];
 
 const stats = [
-  { value: '10+', label: 'Tech Stacks' },
-  { value: '3', label: 'Enterprise Clients' },
-  { value: '100%', label: 'Production-Ready' },
-  { value: '24/7', label: 'Support' },
+  { value: '7,500+', label: 'RPS Benchmark Tested' },
+  { value: '30-50%', label: 'Cloud Cost Savings' },
+  { value: '100%', label: 'Production-Ready Code' },
+  { value: '24/7', label: 'Observability & Monitoring' },
 ];
 
 const reasons = [
-  'Pengalaman dengan enterprise & hackathon projects',
-  'AI-first approach - bukan add-on selepas dah build',
-  'Full-stack: frontend, backend, mobile, dan infra',
-  'Code quality: tested, documented, dan maintainable',
-  'Komunikasi responsif sepanjang projek',
+  'Pengalaman hands-on dengan distributed systems, Kubernetes IaC, & AI hackathons',
+  'Fokus pada ROI & impak bisnes sebenar, bukan sekadar template semberono',
+  'Full-stack end-to-end: dari frontend UI, scalable API, hingga cloud infrastructure',
+  'Standard kod gred produksi: diuji (tested), modular, berdokumen, & mudah di-extend',
+  'Respons pantas dalam masa 1-2 jam di WhatsApp/Telegram sepanjang projek berjalan',
 ];
 ---
 
@@ -28,25 +28,25 @@ const reasons = [
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">
-        Kenapa Pilih Kami
+        Nilai & Kelebihan Kami
       </span>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
         Bukan Sekadar Deliver.{' '}
-        <span class="text-secondary">Kami Bina Dengan Betul.</span>
+        <span class="text-secondary">Kami Bina Dengan Standard Tertinggi.</span>
       </h2>
       <p class="text-lg text-muted-foreground">
-        Setiap keputusan teknikal ada sebab. Kami bina sistem yang anda boleh bangga dengan - dan yang boleh grow bersama bisnes anda.
+        Setiap baris kod dan konfigurasi server mempunyai matlamat kejuruteraan yang jelas untuk memacu pertumbuhan perniagaan anda.
       </p>
     </div>
 
     <!-- Stats Row -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
       {stats.map((stat, index) => (
         <div
-          class="text-center p-6 bg-primary/5 border border-primary/10 rounded-2xl transition-colors duration-300"
+          class="text-center p-6 bg-primary/5 border border-primary/10 rounded-2xl transition-all duration-300 hover:border-primary/30 hover:bg-primary/10"
         >
-          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
-          <p class="text-muted-foreground text-sm">{stat.label}</p>
+          <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-2">{stat.value}</div>
+          <p class="text-muted-foreground text-xs sm:text-sm font-medium">{stat.label}</p>
         </div>
       ))}
     </div>
@@ -54,8 +54,8 @@ const reasons = [
     <!-- Benefits & Reasons Grid -->
     <div class="grid lg:grid-cols-2 gap-8">
       <!-- Benefits -->
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-        <h3 class="text-2xl font-bold mb-8">Apa Yang Anda Dapat</h3>
+      <div class="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm">
+        <h3 class="text-2xl font-bold mb-8 text-foreground">Apa Yang Anda Peroleh</h3>
         <div class="space-y-6">
           {benefits.map((benefit, index) => (
             <div
@@ -67,8 +67,8 @@ const reasons = [
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-lg mb-1">{benefit.title}</h4>
-                <p class="text-muted-foreground text-sm">{benefit.desc}</p>
+                <h4 class="font-bold text-lg mb-1 text-foreground">{benefit.title}</h4>
+                <p class="text-muted-foreground text-sm leading-relaxed">{benefit.desc}</p>
               </div>
             </div>
           ))}
@@ -76,28 +76,32 @@ const reasons = [
       </div>
 
       <!-- Why Choose Us -->
-      <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8">
-        <h3 class="text-2xl font-bold mb-8">Kenapa Kami?</h3>
-        <ul class="space-y-4">
-          {reasons.map((reason, index) => (
-            <li
-              class="flex items-center gap-3"
-            >
-              <svg class="w-6 h-6 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-muted-foreground">{reason}</span>
-            </li>
-          ))}
-        </ul>
+      <div class="bg-primary/5 border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-bold mb-8 text-foreground">Mengapa WebDevMY?</h3>
+          <ul class="space-y-4">
+            {reasons.map((reason, index) => (
+              <li
+                class="flex items-start gap-3 text-sm sm:text-base"
+              >
+                <svg class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-foreground/90 font-medium">{reason}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div class="mt-8 pt-6 border-t border-primary/10">
-          <p class="text-muted-foreground mb-4">Sedia untuk bincang projek?</p>
+          <p class="text-muted-foreground mb-4 text-sm">Sedia untuk semak potensi sistem atau kos cloud anda?</p>
           <a
-            href="#hubungi"
-            class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            href="https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20nak%20bincang%20projek%20atau%20claim%20audit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-md hover:scale-105 w-full sm:w-auto"
           >
-            Mulakan Sekarang
+            Mulakan Sesi Perbincangan
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -107,3 +111,4 @@ const reasons = [
     </div>
   </div>
 </section>
+

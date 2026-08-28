@@ -10,6 +10,7 @@ import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import ExitPopup from '../components/ExitPopup.astro';
 import '../styles/global.css';
 
 import { siteConfig } from '../data/site';
@@ -65,7 +66,7 @@ const businessStructuredData = {
 };
 ---
 
-<Layout title={`${siteConfig.name} | Transformasi Digital SME Malaysia`}>
+<Layout title={`${siteConfig.name} | Production-Grade Web Systems, DevOps & AI Solutions`}>
   <!-- Preloader -->
   <section class="preloader" id="preloader">
     <div class="spinner"></div>
@@ -85,6 +86,7 @@ const businessStructuredData = {
   </main>
   
   <Footer />
+  <ExitPopup />
   
   <!-- Structured Data -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify(businessStructuredData)} />
@@ -113,3 +115,4 @@ const businessStructuredData = {
     });
   </script>
 </Layout>
+

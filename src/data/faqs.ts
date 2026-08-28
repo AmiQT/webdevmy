@@ -2,31 +2,28 @@ import type { FAQ } from '../types/data';
 
 export const faqs: FAQ[] = [
   {
-    question: 'Apa jenis projek yang anda ambil?',
-    answer: 'Kami fokus pada custom software - web apps, mobile apps, AI integration, backend systems, dan DevOps infrastructure. Bukan template atau basic landing page. Setiap projek ada keperluan teknikal yang kami tackle dari architecture hingga deployment.',
+    question: 'Apa jenis servis dan kepakaran kejuruteraan yang anda tawarkan?',
+    answer: 'Kami fokus pada penyelesaian perisian gred produksi — merangkumi Cloud Infrastructure & DevOps (Kubernetes, Terraform IaC, CI/CD), High-Throughput Backend (Go, FastAPI, Spring Boot), Sistem Enterprise (HR/Payroll EPF/SOCSO, Custom CRM), dan Integrasi Agentic AI (LangGraph, RAG).',
   },
   {
-    question: 'Berapa lama biasanya untuk siap?',
-    answer: 'Bergantung pada scope. MVP web app atau AI chatbot boleh siap dalam 2-4 minggu. Sistem yang lebih complex dengan mobile app, backend, dan infrastructure boleh ambil 6-12 minggu. Kami bagi timeline yang jelas dengan milestones dari awal.',
+    question: 'Bagaimana servis Cloud Cost & System Audit berfungsi?',
+    answer: 'Kami menawarkan sesi audit 15 minit percuma di mana kami menganalisis seni bina semasa anda, mengenal pasti over-provisioned cloud resources (AWS/GCP/DigitalOcean), serta mencadangkan strategi caching dan automasi yang mampu menjimatkan sehingga 30%-50% bil bulanan server anda.',
   },
   {
-    question: 'Macam mana proses kerja anda?',
-    answer: 'Bermula dengan discovery call untuk faham keperluan bisnes dan teknikal anda. Kemudian kami propose architecture, bagi estimate, dan mula development dengan sprint dua minggu. Anda dapat progress update berkala dan boleh bagi feedback sepanjang proses.',
+    question: 'Bolehkah anda integrasikan kecerdasan AI ke dalam sistem syarikat yang sedia ada?',
+    answer: 'Ya, tentu sekali. Kami mereka bentuk lapisan AI (seperti ChatOps bot, pembantu sokongan RAG, atau automasi dokumen PDF) yang bersambung terus dengan pangkalan data dan API sedia ada anda tanpa perlu membina semula keseluruhan sistem dari awal.',
   },
   {
-    question: 'Boleh saya urus sistem sendiri selepas siap?',
-    answer: 'Ya. Kami setup dengan CMS atau admin dashboard ikut keperluan, dan provide documentation serta handover session. Untuk sistem yang lebih complex, kami boleh arrange ongoing maintenance retainer.',
+    question: 'Berapa lama masa yang diperlukan untuk menyiapkan sesuatu projek?',
+    answer: 'Bergantung pada skop kerja. Audit infrastruktur dan CI/CD setup mengambil masa 3-5 hari. MVP web app atau sistem automasi AI biasanya siap dalam 2-4 minggu. Sistem enterprise berskala penuh mengambil masa 4-8 minggu dengan milestone dan demo setiap sprint.',
   },
   {
-    question: 'Tech stack apa yang anda guna?',
-    answer: 'Kami pilih stack berdasarkan keperluan projek - bukan satu stack untuk semua. Frontend: Next.js, Astro, Flutter. Backend: FastAPI, Golang, Spring Boot. AI: Gemini, Azure OpenAI, LangGraph. Infrastructure: Docker, Kubernetes, Terraform. Database: PostgreSQL, Supabase, Redis.',
+    question: 'Adakah kod sumber dan infrastruktur menjadi hak milik penuh syarikat saya?',
+    answer: 'Ya, 100%. Kesemua kod sumber (GitHub/GitLab), fail konfigurasi Terraform/Docker, dan infrastruktur cloud dideploy terus ke akaun anda. Kami turut menyediakan dokumentasi seni bina lengkap dan sesi handover secara langsung.',
   },
   {
-    question: 'Boleh anda integrate AI ke dalam sistem sedia ada?',
-    answer: 'Ya, ini salah satu perkara yang kami buat. Kami assess sistem sedia ada, design integration point, dan implement AI layer - sama ada chatbot, automation workflow, atau analytics - tanpa kena rebuild dari scratch.',
-  },
-  {
-    question: 'Berapa kos untuk satu projek?',
-    answer: 'Kami tak ada fixed pricing sebab setiap projek berbeza scope dan complexity. Hubungi kami dengan brief projek anda dan kami akan bagi custom quote yang transparent - tanpa hidden cost.',
+    question: 'Bagaimana struktur harga dan terma pembayaran?',
+    answer: 'Kami mengamalkan model harga telus berasaskan milestone berfasa (contohnya 40% deposit, 30% milestone beta, 30% handover penuh) atau pelan retainer bulanan untuk pengurusan DevOps dan penambahbaikan sistem berterusan.',
   },
 ];
+

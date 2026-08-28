@@ -1,23 +1,23 @@
 ---
 const problems = [
   {
-    title: 'Proses Manual Yang Buang Masa & Kos',
-    description: 'Staff habiskan masa buat kerja repetitif yang boleh di-automate. Tiada sistem, tiada data, tiada insight.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    title: 'Bil Cloud (AWS/GCP) Melambung & Server Lemau',
+    description: 'Over-provisioning resources tanpa auto-scaling dan ketiadaan caching menyebabkan bil server cecah ribuan ringgit tanpa peningkatan prestasi.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
   },
   {
-    title: 'Sistem Lama Yang Tak Boleh Scale',
-    description: 'Tech stack lama jadi bottleneck bila bisnes grow. Susah nak integrate, slow, dan mahal nak maintain.',
+    title: 'Sistem Tersekat & Proses Manual Buang Masa',
+    description: 'Operasi bisnes tersekat dengan spreadsheet manual, pengiraan gaji berisiko silap, dan tiada automasi antara jabatan.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
   },
   {
-    title: 'Nak AI Tapi Tak Tahu Nak Mula Dari Mana',
-    description: 'Semua orang cakap pasal AI tapi implementation yang betul - yang actually works dalam production - tu yang susah.',
+    title: 'Ingin AI Sebenar, Bukan Chatbot Generik Bodo',
+    description: 'Banyak chatbot di pasaran hanya membalas jawapan umum dan halusinasi. Bisnes perlukan AI agentic yang boleh membaca dokumen PDF dan bertindak ke atas pangkalan data.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
   },
   {
-    title: 'Tiada In-House Tech Team',
-    description: 'Nak bina sistem sendiri tapi takde developer. Hire freelancer yang deliver template - bukan solution.',
+    title: 'Ketiadaan Senior Tech Lead & DevOps In-House',
+    description: 'Menggaji pasukan kejuruteraan penuh menelan belanja ratusan ribu. Bekerjasama dengan rakan kongsi kejuruteraan freelance memberi anda kepakaran gred enterprise pada kos fleksibel.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
   },
 ];
@@ -28,45 +28,54 @@ const problems = [
     <div class="max-w-4xl mx-auto">
       <div>
         <span class="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
-          Masalah Biasa
+          Cabaran & Bottleneck Perniagaan
         </span>
 
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-          Adakah Ini{' '}
-          <span class="gradient-text">Cabaran</span>{' '}
-          Bisnes Anda?
+          Adakah Sistem Anda Menghadapi{' '}
+          <span class="gradient-text">Isu Ini</span>?
         </h2>
 
         <p class="text-lg text-muted-foreground mb-8">
-          Ramai bisnes di Malaysia stuck kat masalah yang sama. Kami faham - dan kami ada solution yang betul.
+          Banyak syarikat berbelanja besar untuk teknologi tetapi terperangkap dengan infrastruktur yang rapuh dan proses manual. Kami ada penyelesaian kejuruteraan yang tepat.
         </p>
 
         <div class="space-y-4">
           {problems.map((problem, index) => (
             <div
-              class="flex gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors duration-300"
+              class="flex gap-4 p-5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300"
             >
               <div class="text-primary flex-shrink-0" set:html={problem.icon} />
               <div>
-                <h3 class="font-semibold text-foreground mb-1">{problem.title}</h3>
-                <p class="text-sm text-muted-foreground">{problem.description}</p>
+                <h3 class="font-bold text-foreground text-base md:text-lg mb-1">{problem.title}</h3>
+                <p class="text-sm text-muted-foreground leading-relaxed">{problem.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div class="mt-8">
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <a
             href="#solusi"
-            class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+            class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
           >
-            Lihat Apa Yang Kami Bina
+            Lihat Solusi Yang Kami Bina
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
+          </a>
+          <span class="hidden sm:inline text-muted-foreground">•</span>
+          <a
+            href="https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20nak%20audit%20masalah%20sistem%20saya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-semibold text-secondary hover:underline"
+          >
+            Bincang masalah sistem anda di WhatsApp &rarr;
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
