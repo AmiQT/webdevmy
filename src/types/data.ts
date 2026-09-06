@@ -9,10 +9,6 @@ export interface SiteConfig {
   };
   openingHours: string;
   priceRange: string;
-  rating: {
-    value: string;
-    count: string;
-  };
 }
 
 export interface FAQ {

@@ -7,7 +7,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: 'Bagaimana servis Cloud Cost & System Audit berfungsi?',
-    answer: 'Kami menawarkan sesi audit 15 minit percuma di mana kami menganalisis seni bina semasa anda, mengenal pasti over-provisioned cloud resources (AWS/GCP/DigitalOcean), serta mencadangkan strategi caching dan automasi yang mampu menjimatkan sehingga 30%-50% bil bulanan server anda.',
+    answer: 'Kami mulakan dengan sesi perbincangan 15 minit percuma untuk faham objektif, proses semasa dan keutamaan anda. Jika sesuai, kami cadangkan pendekatan, scope dan anggaran timeline sebelum sebarang kerja bermula.',
   },
   {
     question: 'Bolehkah anda integrasikan kecerdasan AI ke dalam sistem syarikat yang sedia ada?',
@@ -15,7 +15,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: 'Berapa lama masa yang diperlukan untuk menyiapkan sesuatu projek?',
-    answer: 'Bergantung pada skop kerja. Audit infrastruktur dan CI/CD setup mengambil masa 3-5 hari. MVP web app atau sistem automasi AI biasanya siap dalam 2-4 minggu. Sistem enterprise berskala penuh mengambil masa 4-8 minggu dengan milestone dan demo setiap sprint.',
+    answer: 'Website biasanya mengambil 1-2 minggu selepas kandungan dan scope disahkan. Website dengan booking atau workflow automation lazimnya 2-4 minggu. Sistem custom yang lebih kompleks akan dipecahkan kepada milestone dengan timeline yang dipersetujui bersama.',
   },
   {
     question: 'Adakah kod sumber dan infrastruktur menjadi hak milik penuh syarikat saya?',
@@ -23,7 +23,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: 'Bagaimana struktur harga dan terma pembayaran?',
-    answer: 'Kami mengamalkan model harga telus berasaskan milestone berfasa (contohnya 40% deposit, 30% milestone beta, 30% handover penuh) atau pelan retainer bulanan untuk pengurusan DevOps dan penambahbaikan sistem berterusan.',
+    answer: 'Untuk projek pantas/landing page: 50% deposit upfront & 50% baki semasa handover. Untuk projek custom & enterprise: kami amalkan milestone berfasa (40% deposit, 30% milestone beta, 30% handover penuh) atau pelan retainer bulanan.',
   },
 ];
 

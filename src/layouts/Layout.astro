@@ -7,7 +7,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Penyelesaian kejuruteraan perisian dan infrastruktur gred produksi untuk perniagaan di Malaysia & serantau. Fullstack web apps, distributed systems, DevOps cloud, dan automasi Agentic AI.",
+  description = "Website dan sistem web custom untuk bisnes servis Malaysia — daripada lead capture, booking dan automasi workflow hingga aplikasi AI.",
   canonical = "https://webdevmy.netlify.app/"
 } = Astro.props;
 
@@ -37,14 +37,14 @@ const isProduction = import.meta.env.PROD;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://webdevmy.com/images/og-image.jpg" />
+    <meta property="og:image" content="https://webdevmy.netlify.app/images/og-image.jpg" />
     <meta property="og:locale" content="ms_MY" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://webdevmy.com/images/twitter-card.jpg" />
+    <meta name="twitter:image" content="https://webdevmy.netlify.app/images/twitter-card.jpg" />
 
     <title>{title}</title>
     
