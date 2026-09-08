@@ -707,7 +707,7 @@ export const translations = {
         {
           name: 'Lead-Generating Website',
           badge: 'For Service Businesses',
-          price: 'RM 3,500',
+          price: '$850',
           period: 'starting from',
           description: 'Professional website for local services, contractors, clinics, and businesses seeking consistent high-quality inquiries.',
           features: [
@@ -724,7 +724,7 @@ export const translations = {
         {
           name: 'Website + Workflow Automation',
           badge: '🔥 Most Popular',
-          price: 'RM 6,500',
+          price: '$1,550',
           period: 'starting from',
           description: 'For businesses wanting their website integrated with bookings, lead pipelines, payments, or streamlined operations dashboards.',
           features: [
@@ -741,7 +741,7 @@ export const translations = {
         {
           name: 'Custom System & AI Automation',
           badge: '🚀 Custom Scope',
-          price: 'RM 15,000+',
+          price: '$3,500+',
           period: 'custom quote',
           description: 'For complex workflows, bespoke web apps, internal systems, or custom AI copilots requiring dedicated technical discovery.',
           features: [
