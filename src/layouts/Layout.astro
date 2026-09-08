@@ -1,22 +1,32 @@
 ---
+import type { SupportedLanguage } from '../i18n/translations';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
 interface Props {
   title: string;
   description?: string;
   canonical?: string;
+  lang?: SupportedLanguage;
 }
 
 const { 
   title, 
-  description = "Website dan sistem web custom untuk bisnes servis Malaysia — daripada lead capture, booking dan automasi workflow hingga aplikasi AI.",
-  canonical = "https://webdevmy.netlify.app/"
+  lang = getLangFromUrl(Astro.url),
+  description,
+  canonical
 } = Astro.props;
+
+const t = useTranslations(lang);
+const metaDescription = description || t.meta.description;
+const baseUrl = 'https://webdevmy.com';
+const canonicalUrl = canonical || (lang === 'en' ? `${baseUrl}/en/` : `${baseUrl}/`);
 
 // Only load Google Analytics in production
 const isProduction = import.meta.env.PROD;
 ---
 
 <!doctype html>
-<html lang="ms">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,27 +34,32 @@ const isProduction = import.meta.env.PROD;
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234169e1' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/><path d='M2 12h20'/></svg>" />
     
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <meta name="author" content="WebDevMY - AI Solutions & Custom Software Malaysia" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="Malay" />
+    <meta name="language" content={lang === 'ms' ? 'Malay' : 'English'} />
     <meta name="geo.region" content="MY" />
     <meta name="geo.country" content="Malaysia" />
-    <link rel="canonical" href={canonical} />
+    
+    <!-- Canonical & Alternate Hreflang for SEO -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="ms" href={`${baseUrl}/`} />
+    <link rel="alternate" hreflang="en" href={`${baseUrl}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}/`} />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://webdevmy.netlify.app/images/og-image.jpg" />
-    <meta property="og:locale" content="ms_MY" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${baseUrl}/images/og-image.jpg`} />
+    <meta property="og:locale" content={lang === 'ms' ? 'ms_MY' : 'en_US'} />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://webdevmy.netlify.app/images/twitter-card.jpg" />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={`${baseUrl}/images/twitter-card.jpg`} />
 
     <title>{title}</title>
     
@@ -65,7 +80,7 @@ const isProduction = import.meta.env.PROD;
     )}
   </head>
   <body class="antialiased">
-    <a href="#main-content" class="skip-link">Langkau ke kandungan utama</a>
+    <a href="#main-content" class="skip-link">{t.meta.skipLink}</a>
     <slot />
     
     <!-- Scroll Animation Observer -->

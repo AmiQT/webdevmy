@@ -1,62 +1,18 @@
 ---
-const packages = [
-  {
-    name: 'Lead-Generating Website',
-    badge: 'Untuk Service Business',
-    badgeClass: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
-    popular: false,
-    price: 'RM 3,500',
-    period: 'bermula dari',
-    description: 'Website profesional untuk servis lokal, kontraktor, klinik dan bisnes yang mahu lebih banyak enquiry berkualiti.',
-    features: [
-      'Custom mobile-first design & service pages',
-      'WhatsApp CTA dan enquiry form berstruktur',
-      'Portfolio, testimoni dan trust sections',
-      'SEO foundation, GA4 dan lead tracking',
-      'Hosting, SSL dan deployment setup',
-      'Sesi handover + 30 hari support'
-    ],
-    ctaText: 'Bincang Website Anda',
-    ctaLink: 'https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20nak%20bincang%20Lead-Generating%20Website%20untuk%20bisnes%20saya.'
-  },
-  {
-    name: 'Website + Workflow Automation',
-    badge: '🔥 Paling Popular',
-    badgeClass: 'bg-primary/20 text-primary border-primary/30',
-    popular: true,
-    price: 'RM 6,500',
-    period: 'bermula dari',
-    description: 'Untuk bisnes yang mahu website dihubungkan dengan booking, lead pipeline, payment atau dashboard operasi ringkas.',
-    features: [
-      'Semua asas Lead-Generating Website',
-      'Booking, site visit atau lead pipeline',
-      'Database dan dashboard admin ringkas',
-      'Integrasi payment / calendar mengikut scope',
-      'Notifikasi email atau WhatsApp',
-      'Handover, dokumentasi dan 60 hari support'
-    ],
-    ctaText: 'Bincang Workflow Saya',
-    ctaLink: 'https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20nak%20bincang%20website%20dengan%20booking%20atau%20workflow%20automation.'
-  },
-  {
-    name: 'Custom System & AI Automation',
-    badge: '🚀 Custom Scope',
-    badgeClass: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-    popular: false,
-    price: 'RM 15,000+',
-    period: 'custom quote',
-    description: 'Untuk workflow operasi yang kompleks, aplikasi custom, integrasi dalaman atau AI copilot yang perlukan discovery dan reka bentuk khusus.',
-    features: [
-      'Discovery workshop dan workflow mapping',
-      'Custom web app, role access dan integrations',
-      'Document, quotation atau operations automation',
-      'AI copilot / knowledge assistant dengan human review',
-      'Secure deployment, monitoring dan documentation',
-      'Pilihan maintenance & improvement retainer'
-    ],
-    ctaText: 'Dapatkan Enterprise Quote',
-    ctaLink: 'https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20perlukan%20solusi%20Enterprise%20DevOps%20/%20High-Throughput%20Backend%20/%20AI%20Automation.'
-  }
+import type { SupportedLanguage } from '../i18n/translations';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang?: SupportedLanguage;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+const t = useTranslations(lang);
+
+const badgeClasses = [
+  'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
+  'bg-primary/20 text-primary border-primary/30',
+  'bg-purple-500/10 text-purple-400 border-purple-500/20',
 ];
 ---
 
@@ -66,94 +22,92 @@ const packages = [
   <div class="container mx-auto px-4 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
-        Pakej & Pelaburan Telus
+        {t.pricing.tag}
       </span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-        Pilih Pakej Sesuai Dengan <span class="gradient-text">Fasa Bisnes Anda</span>
+        {t.pricing.title} <span class="gradient-text">{t.pricing.titleHighlight}</span>
       </h2>
       <p class="text-lg text-muted-foreground">
-        Scope dan timeline dimuktamadkan sebelum build bermula. Pilih pakej yang sesuai dengan tahap operasi bisnes anda.
+        {t.pricing.desc}
       </p>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-      {packages.map((pkg) => (
-        <div 
-          class={`relative rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between ${
-            pkg.popular 
-              ? 'bg-card border-2 border-primary shadow-2xl shadow-primary/10 scale-100 lg:-translate-y-2' 
-              : 'bg-card/60 border border-border hover:border-primary/40 hover:shadow-xl'
-          }`}
-        >
-          {pkg.popular && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold py-1.5 px-4 rounded-full shadow-md tracking-wide uppercase">
-              Pilihan Paling Ramai Klien
-            </div>
-          )}
-
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class={`text-xs font-bold px-3 py-1 rounded-full border ${pkg.badgeClass}`}>
-                {pkg.badge}
-              </span>
-            </div>
-
-            <h3 class="text-2xl font-bold text-foreground mb-2">{pkg.name}</h3>
-            <p class="text-sm text-muted-foreground mb-6 leading-relaxed">{pkg.description}</p>
-
-            <div class="mb-8 pb-6 border-b border-border">
-              <div class="flex items-baseline gap-2">
-                <span class="text-4xl sm:text-5xl font-extrabold text-foreground tracking-tight">{pkg.price}</span>
-                <span class="text-xs sm:text-sm text-muted-foreground font-medium">/ {pkg.period}</span>
-              </div>
-            </div>
-
-            <ul class="space-y-3.5 mb-8">
-              {pkg.features.map((feature) => (
-                <li class="flex items-start gap-3 text-sm text-foreground/90">
-                  <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <a
-            href={pkg.ctaLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-track="cta"
-            class={`w-full py-4 px-6 rounded-xl font-bold text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-lg ${
-              pkg.popular
-                ? 'bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02]'
-                : 'bg-muted hover:bg-primary hover:text-primary-foreground text-foreground'
+      {t.pricing.packages.map((pkg, index) => {
+        const isPopular = index === 1;
+        const badgeClass = badgeClasses[index] || badgeClasses[0];
+        return (
+          <div 
+            class={`relative rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between ${
+              isPopular 
+                ? 'bg-card border-2 border-primary shadow-2xl shadow-primary/10 scale-100 lg:-translate-y-2' 
+                : 'bg-card/60 border border-border hover:border-primary/40 hover:shadow-xl'
             }`}
           >
-            <span>{pkg.ctaText}</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
-        </div>
-      ))}
+            {isPopular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold py-1.5 px-4 rounded-full shadow-md tracking-wide uppercase">
+                {t.pricing.popularChoice}
+              </div>
+            )}
+
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class={`text-xs font-bold px-3 py-1 rounded-full border ${badgeClass}`}>
+                  {pkg.badge}
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-foreground mb-2">{pkg.name}</h3>
+              <p class="text-sm text-muted-foreground mb-6 leading-relaxed">{pkg.description}</p>
+
+              <div class="mb-8 pb-6 border-b border-border">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-4xl sm:text-5xl font-extrabold text-foreground tracking-tight">{pkg.price}</span>
+                  <span class="text-xs sm:text-sm text-muted-foreground font-medium">/ {pkg.period}</span>
+                </div>
+              </div>
+
+              <ul class="space-y-3.5 mb-8">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-sm text-foreground/90">
+                    <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a
+              href={pkg.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track="cta"
+              class={`w-full py-4 px-6 rounded-xl font-bold text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-lg ${
+                isPopular
+                  ? 'bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02]'
+                  : 'bg-muted hover:bg-primary hover:text-primary-foreground text-foreground'
+              }`}
+            >
+              <span>{pkg.ctaText}</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        );
+      })}
     </div>
 
     <div class="mt-16 bg-muted/40 rounded-2xl p-6 sm:p-8 border border-border text-center max-w-4xl mx-auto">
       <div class="grid sm:grid-cols-3 gap-6">
-        <div>
-          <div class="font-bold text-foreground text-base mb-1">⏱️ Fast Turnaround</div>
-          <div class="text-xs text-muted-foreground">Milestones siap ikut jadual tanpa delay.</div>
-        </div>
-        <div>
-          <div class="font-bold text-foreground text-base mb-1">🔒 100% Kod Hak Milik Anda</div>
-          <div class="text-xs text-muted-foreground">Full source code & deployment handover milik anda.</div>
-        </div>
-        <div>
-          <div class="font-bold text-foreground text-base mb-1">🤝 Telus & Beretika</div>
-          <div class="text-xs text-muted-foreground">Tiada bayaran tersembunyi atau lock-in vendor.</div>
-        </div>
+        {t.pricing.guarantees.map((item) => (
+          <div>
+            <div class="font-bold text-foreground text-base mb-1">{item.title}</div>
+            <div class="text-xs text-muted-foreground">{item.desc}</div>
+          </div>
+        ))}
       </div>
     </div>
   </div>

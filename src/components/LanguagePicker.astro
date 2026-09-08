@@ -1,0 +1,65 @@
+---
+import type { SupportedLanguage } from '../i18n/translations';
+import { getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  currentLang?: SupportedLanguage;
+  className?: string;
+}
+
+const { currentLang = getLangFromUrl(Astro.url), className = '' } = Astro.props;
+
+const isBM = currentLang === 'ms';
+const isEN = currentLang === 'en';
+---
+
+<div class={`language-switcher inline-flex items-center p-0.5 sm:p-1 rounded-full bg-muted/80 border border-border text-xs font-semibold backdrop-blur-md shadow-inner transition-all ${className}`}>
+  <!-- BM Option -->
+  <a
+    href="/"
+    data-lang-target="ms"
+    class={`lang-btn flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all duration-200 ${
+      isBM
+        ? 'bg-primary text-primary-foreground shadow-sm font-bold pointer-events-none'
+        : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
+    }`}
+    aria-label="Tukar ke Bahasa Melayu"
+    aria-current={isBM ? 'true' : undefined}
+  >
+    <span class="text-sm leading-none" aria-hidden="true">🇲🇾</span>
+    <span>BM</span>
+  </a>
+
+  <!-- EN Option -->
+  <a
+    href="/en/"
+    data-lang-target="en"
+    class={`lang-btn flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all duration-200 ${
+      isEN
+        ? 'bg-primary text-primary-foreground shadow-sm font-bold pointer-events-none'
+        : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
+    }`}
+    aria-label="Switch to English"
+    aria-current={isEN ? 'true' : undefined}
+  >
+    <span class="text-sm leading-none" aria-hidden="true">🇬🇧</span>
+    <span>EN</span>
+  </a>
+</div>
+
+<script>
+  // Preserve hash when toggling language
+  document.querySelectorAll<HTMLAnchorElement>('.language-switcher .lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const targetLang = btn.getAttribute('data-lang-target');
+      if (!targetLang) return;
+      
+      const currentHash = window.location.hash || '';
+      const baseTarget = targetLang === 'en' ? '/en/' : '/';
+      
+      // Navigate to baseTarget + currentHash
+      e.preventDefault();
+      window.location.href = `${baseTarget}${currentHash}`;
+    });
+  });
+</script>

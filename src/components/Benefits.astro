@@ -1,26 +1,13 @@
 ---
-const benefits = [
-  { title: 'Seni Bina Gred Enterprise', desc: 'Setiap sistem dibina atas foundation kukuh — modular, scalable, clean architecture, dan production-ready dari Hari Pertama.' },
-  { title: 'Built For Reliable Growth', desc: 'Seni bina, hosting dan integrasi dipilih mengikut keperluan semasa supaya sistem mudah dijaga dan dinaik taraf.' },
-  { title: 'Agentic AI Bertaraf Produksi', desc: 'Bukan sekadar bot generik. AI agents dengan tool-calling, document RAG, dan ChatOps yang beroperasi stabil dalam senario bisnes sebenar.' },
-  { title: 'Deployment & Support Yang Kemas', desc: 'Kami urus deployment, dokumentasi dan handover supaya pasukan anda tahu cara meneruskan operasi selepas launch.' },
-  { title: 'Komunikasi Pantas & Terus', desc: 'Tiada birokrasi agensi yang perlahan — berhubung terus dengan jurutera melalui WhatsApp dengan sprint update dua minggu yang jelas.' },
-];
+import type { SupportedLanguage } from '../i18n/translations';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
-const stats = [
-  { value: 'Fullstack', label: 'Design hingga Deployment' },
-  { value: 'Custom', label: 'Ikut Workflow Bisnes' },
-  { value: 'AI', label: 'Automation Yang Praktikal' },
-  { value: 'Clear', label: 'Scope & Handover' },
-];
+interface Props {
+  lang?: SupportedLanguage;
+}
 
-const reasons = [
-  'Pengalaman hands-on dengan distributed systems, Kubernetes IaC, & AI hackathons',
-  'Fokus pada ROI & impak bisnes sebenar, bukan sekadar template semberono',
-  'Full-stack end-to-end: dari frontend UI, scalable API, hingga cloud infrastructure',
-  'Standard kod gred produksi: diuji (tested), modular, berdokumen, & mudah di-extend',
-  'Respons pantas dalam masa 1-2 jam di WhatsApp/Telegram sepanjang projek berjalan',
-];
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section class="section-padding bg-background">
@@ -28,20 +15,20 @@ const reasons = [
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">
-        Nilai & Kelebihan Kami
+        {t.benefits.tag}
       </span>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-        Bukan Sekadar Deliver.{' '}
-        <span class="text-secondary">Kami Bina Dengan Standard Tertinggi.</span>
+        {t.benefits.title}{' '}
+        <span class="text-secondary">{t.benefits.titleHighlight}</span>
       </h2>
       <p class="text-lg text-muted-foreground">
-        Setiap baris kod dan konfigurasi server mempunyai matlamat kejuruteraan yang jelas untuk memacu pertumbuhan perniagaan anda.
+        {t.benefits.desc}
       </p>
     </div>
 
     <!-- Stats Row -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
-      {stats.map((stat, index) => (
+      {t.benefits.stats.map(stat => (
         <div
           class="text-center p-6 bg-primary/5 border border-primary/10 rounded-2xl transition-all duration-300 hover:border-primary/30 hover:bg-primary/10"
         >
@@ -55,9 +42,9 @@ const reasons = [
     <div class="grid lg:grid-cols-2 gap-8">
       <!-- Benefits -->
       <div class="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm">
-        <h3 class="text-2xl font-bold mb-8 text-foreground">Apa Yang Anda Peroleh</h3>
+        <h3 class="text-2xl font-bold mb-8 text-foreground">{t.benefits.benefitsTitle}</h3>
         <div class="space-y-6">
-          {benefits.map((benefit, index) => (
+          {t.benefits.items.map(benefit => (
             <div
               class="flex gap-4 transition-colors duration-300"
             >
@@ -78,9 +65,9 @@ const reasons = [
       <!-- Why Choose Us -->
       <div class="bg-primary/5 border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
         <div>
-          <h3 class="text-2xl font-bold mb-8 text-foreground">Mengapa WebDevMY?</h3>
+          <h3 class="text-2xl font-bold mb-8 text-foreground">{t.benefits.whyTitle}</h3>
           <ul class="space-y-4">
-            {reasons.map((reason, index) => (
+            {t.benefits.reasons.map(reason => (
               <li
                 class="flex items-start gap-3 text-sm sm:text-base"
               >
@@ -94,14 +81,14 @@ const reasons = [
         </div>
 
         <div class="mt-8 pt-6 border-t border-primary/10">
-          <p class="text-muted-foreground mb-4 text-sm">Sedia bincang website atau workflow yang sesuai untuk bisnes anda?</p>
+          <p class="text-muted-foreground mb-4 text-sm">{t.benefits.whyCtaDesc}</p>
           <a
-            href="https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20nak%20bincang%20projek%20atau%20claim%20audit"
+            href={`https://wa.me/60138799702?text=${encodeURIComponent(t.benefits.waMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-md hover:scale-105 w-full sm:w-auto"
           >
-            Mulakan Sesi Perbincangan
+            {t.benefits.whyCtaBtn}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -111,4 +98,3 @@ const reasons = [
     </div>
   </div>
 </section>
-

@@ -1,5 +1,13 @@
 ---
-import { testimonials } from '../data/testimonials';
+import type { SupportedLanguage } from '../i18n/translations';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang?: SupportedLanguage;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="testimoni" class="section-padding bg-muted/30">
@@ -7,20 +15,20 @@ import { testimonials } from '../data/testimonials';
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
-        Testimoni
+        {t.testimonials.tag}
       </span>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-        Apa Kata{' '}
-        <span class="gradient-text">Pelanggan Kami</span>?
+        {t.testimonials.title}{' '}
+        <span class="gradient-text">{t.testimonials.titleHighlight}</span>?
       </h2>
       <p class="text-lg text-muted-foreground">
-        Dengar sendiri pengalaman mereka yang telah transform bisnes dengan kami.
+        {t.testimonials.desc}
       </p>
     </div>
     
     <!-- Testimonials Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {testimonials.map((testimonial, index) => (
+      {t.testimonials.items.map((testimonial) => (
         <div
           class="bg-card rounded-2xl p-8 shadow-sm border hover:shadow-xl transition-all duration-300 flex flex-col"
         >

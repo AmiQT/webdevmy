@@ -1,5 +1,13 @@
 ---
-import { projects } from '../data/portfolio';
+import type { SupportedLanguage } from '../i18n/translations';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang?: SupportedLanguage;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="portfolio" class="section-padding bg-muted/30">
@@ -7,20 +15,20 @@ import { projects } from '../data/portfolio';
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
       <span class="inline-block text-sm font-semibold text-secondary mb-4 tracking-wider uppercase">
-        Portfolio & Kajian Kes
+        {t.portfolio.tag}
       </span>
       <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-        Projek & Seni Bina Yang Telah{' '}
-        <span class="gradient-text">Kami Bina</span>
+        {t.portfolio.title}{' '}
+        <span class="gradient-text">{t.portfolio.titleHighlight}</span>
       </h2>
       <p class="text-lg text-muted-foreground">
-        Dari distributed backend berprestasi 7,500+ RPS hingga sandbox Kubernetes multi-tier dan sistem automasi AI gred enterprise.
+        {t.portfolio.desc}
       </p>
     </div>
 
     <!-- Projects Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {projects.map((project, index) => (
+      {t.portfolio.projects.map((project, index) => (
         <div
           class="group bg-card border border-border rounded-2xl p-6 hover:border-secondary/40 hover:bg-card/80 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-lg"
         >
@@ -60,9 +68,9 @@ import { projects } from '../data/portfolio';
 
     <!-- Bottom CTA & Deep-Dive Link -->
     <div class="text-center mt-14 bg-card border border-border rounded-2xl p-8 max-w-2xl mx-auto shadow-sm">
-      <h3 class="text-xl font-bold text-foreground mb-2">Ingin Lihat Lebih Banyak Seni Bina & Kod Sumber?</h3>
+      <h3 class="text-xl font-bold text-foreground mb-2">{t.portfolio.moreCodeTitle}</h3>
       <p class="text-muted-foreground text-sm mb-6">
-        Terokai dokumentasi seni bina teknikal yang lebih mendalam di portfolio kejuruteraan kami.
+        {t.portfolio.moreCodeDesc}
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
@@ -71,18 +79,18 @@ import { projects } from '../data/portfolio';
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all w-full sm:w-auto justify-center"
         >
-          <span>Buka NoorAzami.me</span>
+          <span>{t.portfolio.openPortfolio}</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
         <a
-          href="https://wa.me/60138799702?text=Hi%20WebDevMY,%20saya%20berminat%20dengan%20projek%20anda"
+          href={`https://wa.me/60138799702?text=${encodeURIComponent(t.portfolio.waMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-md hover:scale-105 w-full sm:w-auto justify-center"
         >
-          Bincang Projek Serupa
+          {t.portfolio.discussProject}
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -91,4 +99,3 @@ import { projects } from '../data/portfolio';
     </div>
   </div>
 </section>
-

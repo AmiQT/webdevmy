@@ -10,4 +10,11 @@ export default defineConfig({
     react(),
   ],
   site: 'https://webdevmy.com',
+  i18n: {
+    defaultLocale: 'ms',
+    locales: ['ms', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
